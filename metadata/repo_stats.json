@@ -443,7 +443,7 @@
       "lastUpdated": 1715431162000
     },
     "0069": {
-      "forks": 9692,
+      "forks": 9694,
       "issues": 261,
       "pullRequests": 180,
       "license": "MIT",
@@ -1155,6 +1155,13 @@
       "pullRequests": 7,
       "license": "MIT",
       "lastUpdated": 1765457994000
+    },
+    "0173": {
+      "forks": 0,
+      "issues": 0,
+      "pullRequests": 0,
+      "license": null,
+      "lastUpdated": 1774345198000
     }
   }
 }
