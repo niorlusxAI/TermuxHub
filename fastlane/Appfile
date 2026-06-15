@@ -1,0 +1,8 @@
+json_key_file("fastlane/service-account.json")
+package_name("com.maazm7d.termuxhub")
+
+# For Google Play Store
+supply_json_key_file("fastlane/service-account.json")
+
+# For Firebase
+firebase_app_id("com.maazm7d.termuxhub")

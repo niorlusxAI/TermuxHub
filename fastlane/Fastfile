@@ -1,0 +1,50 @@
+default_platform(:android)
+
+platform :android do
+  desc "Build and upload a beta release to Firebase App Distribution"
+  lane :beta do
+    gradle(
+      task: "assembleRelease",
+      build_type: "Release",
+      flavors: "default"
+    )
+    
+    firebase_app_distribution(
+      app: ENV["FIREBASE_APP_ID"],
+      firebase_cli_token: ENV["FIREBASE_TOKEN"],
+      groups: "testers",
+      release_notes: "Automated beta build from GitHub Actions",
+      android_artifact_type: "APK"
+    )
+  end
+
+  desc "Build and upload to Google Play Store"
+  lane :release do
+    gradle(
+      task: "bundleRelease",
+      build_type: "Release"
+    )
+    
+    upload_to_play_store(
+      track: "production",
+      aab: "app/build/outputs/bundle/release/app-release.aab",
+      release_status: "completed"
+    )
+  end
+
+  desc "Run all tests"
+  lane :test do
+    gradle(
+      task: "testDebugUnitTest",
+      build_type: "Debug"
+    )
+  end
+
+  desc "Build debug APK"
+  lane :debug do
+    gradle(
+      task: "assembleDebug",
+      build_type: "Debug"
+    )
+  end
+end

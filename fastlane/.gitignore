@@ -1,0 +1,52 @@
+# Fastlane
+# https://docs.fastlane.tools/best-practices/source-control/#fastlane-folder
+
+# Environment variables
+.env
+.env.*
+
+# JSON keys (add to .gitignore)
+*.json
+!*.json.example
+
+# Gemfile.lock
+Gemfile.lock
+
+# Fastlane cache and logs
+fastlane/
+  Cachefile
+  Pluginfile
+  Pluginfile.lock
+  fastlane.log
+  itunes_connect.log
+  gym.log
+  pilot.log
+  scan.log
+  supply.log
+  deliver.log
+  snapshots/
+  test_output/
+  preview.html
+  report.xml
+  screenshots/
+
+# Match files
+*.match
+
+# Provisioning profiles
+*.mobileprovision
+
+# Certificates
+*.p12
+*.pem
+
+# Service account keys (should be encrypted)
+service-account.json
+service-account.json.enc
+
+# Match files
+*.match
+
+# Fastlane credentials
+credentials.json
+encryption_key
